@@ -1,7 +1,7 @@
 import { Config } from 'jest';
 
 const config: Config = {
-  coverageDirectory: '../.development/tests/coverage-unit',
+  coverageDirectory: '../.development/tests/coverage-e2e',
   rootDir: '.',
   testEnvironment: 'node',
   testRegex: '.e2e-spec.ts$',
