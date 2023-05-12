@@ -3,6 +3,11 @@ pipelines:
   branches:
     main:
       - step:
+          name: Lint the code
+          script:
+            - npm ci
+            - npm run lint
+      - step:
           name: Build the application
           script:
             - npm ci
