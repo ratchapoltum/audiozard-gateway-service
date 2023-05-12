@@ -1,4 +1,47 @@
 {
-  "singleQuote": true,
-  "trailingComma": "all"
+  "endOfLine": "auto",
+  "tabWidth": 2,
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": "*.ts",
+      "options": {
+        "arrowParens": "always",
+        "trailingComma": "all",
+        "printWidth": 130,
+        "bracketSpacing": true,
+        "semi": true,
+        "singleQuote": true
+      }
+    },
+    {
+      "files": "*.json",
+      "options": {
+        "trailingComma": "none",
+        "bracketSpacing": true,
+        "semi": false,
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.yml",
+      "options": {
+        "parser": "yaml",
+        "trailingComma": "none",
+        "bracketSpacing": false,
+        "semi": false,
+        "singleQuote": true
+      }
+    },
+    {
+      "files": "*rc",
+      "options": {
+        "parser": "json",
+        "trailingComma": "none",
+        "bracketSpacing": true,
+        "semi": false,
+        "singleQuote": false
+      }
+    }
+  ]
 }
