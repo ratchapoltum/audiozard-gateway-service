@@ -1,0 +1,11 @@
+# Compiled output
+/dist
+
+# Dependency directory
+/node_modules
+
+# Development directories
+.development/*
+
+# Rc files
+.npmrc
