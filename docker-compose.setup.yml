@@ -25,6 +25,8 @@ services:
       - 5050:80
     networks:
       - audiozard_network
+    depends_on:
+      - database
   minio:
     container_name: audiozard_minio
     image: bitnami/minio:2023.5.4
