@@ -1,10 +1,21 @@
 {
   "name": "audiozard-gateway-service",
-  "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "version": "1.0.0",
+  "description": "Audiozard Gateway Service is a gateway service for Audiozard Application",
+  "author": {
+    "name": "Ratchapol Thongta",
+    "email": "ratchapol.tumrp@gmail.com"
+  },
+  "homepage": "https://bitbucket.org/shopping-application/audiozard-gateway-service",
+  "repository": {
+    "type": "git",
+    "url": "https://ratchapoltumrp@bitbucket.org/shopping-application/audiozard-gateway-service.git"
+  },
+  "engines": {
+    "node": ">=18.15.0",
+    "npm": ">=9.5.0"
+  },
   "private": true,
-  "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
