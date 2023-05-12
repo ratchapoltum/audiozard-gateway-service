@@ -39,8 +39,14 @@
     "@typescript-eslint/typedef": "error",
     "@typescript-eslint/method-signature-style": ["error", "method"],
     "@typescript-eslint/class-literal-property-style": ["error", "fields"],
-    "@typescript-eslint/consistent-generic-constructors": ["error", "type-annotation"],
-    "@typescript-eslint/consistent-indexed-object-style": ["error", "index-signature"],
+    "@typescript-eslint/consistent-generic-constructors": [
+      "error",
+      "type-annotation"
+    ],
+    "@typescript-eslint/consistent-indexed-object-style": [
+      "error",
+      "index-signature"
+    ],
     "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
     "@typescript-eslint/array-type": [
       "error",
@@ -49,7 +55,7 @@
         "readonly": "generic"
       }
     ],
-    
+
     "@typescript-eslint/consistent-type-assertions": [
       "error",
       {
