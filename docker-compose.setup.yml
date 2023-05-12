@@ -1,0 +1,60 @@
+version: '3'
+services:
+  database:
+    container_name: audiozard_database
+    image: postgres:14.8-alpine
+    environment:
+      POSTGRES_USER: audiozard
+      POSTGRES_PASSWORD: audiozard
+      POSTGRES_DB: AUDIOZARD_DATA
+    volumes:
+      - .development/database/data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - audiozard_network
+  pgadmin:
+    container_name: audiozard_pgadmin
+    image: dpage/pgadmin4:7.1
+    environment:
+      PGADMIN_DEFAULT_EMAIL: audiozard_admin@audiozard.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    volumes:
+      - .development/pgadmin/data:/var/lib/pgadmin
+    ports:
+      - 5050:80
+    networks:
+      - audiozard_network
+  minio:
+    container_name: audiozard_minio
+    image: bitnami/minio:2023.5.4
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: G0xlEarVHjKn1coAX9m35nnTbhWY0ofA
+    volumes:
+      - .development/minio/data:/data
+    ports:
+      - 9000:9000
+      - 9001:9001
+    networks:
+      - audiozard_network
+  rabbitmq:
+    container_name: audiozard_rabbitmq
+    image: rabbitmq:3.9.29-management-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: audiozard_admin
+      RABBITMQ_DEFAULT_PASS: audiozard_admin
+    volumes:
+      - .development/rabbitmq/data:/var/lib/rabbitmq
+      - .development/rabbitmq/logs:/var/log/rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - audiozard_network
+networks:
+  audiozard_network:
+    driver: bridge
+volumes:
+  .development:
+    driver: local
