@@ -1,0 +1,14 @@
+image: node:18.15.0
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Build the application
+          script:
+            - npm ci
+            - npm run build
+      - step:
+          name: Run unit tests
+          script:
+            - npm ci
+            - npm run test:unit
