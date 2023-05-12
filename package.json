@@ -17,6 +17,9 @@
   },
   "private": true,
   "scripts": {
+    "install:husky": "husky install",
+    "precommit": "lint-staged && npm run lint",
+    "prepush": "npm run lint && npm run test:unit",
     "build": "nest build",
     "start": "nest start",
     "start:dev": "nest start --watch",
